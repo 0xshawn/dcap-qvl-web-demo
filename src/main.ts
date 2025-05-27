@@ -1,14 +1,16 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import { setupCounter } from './counter.ts';
+import './style.css';
+import typescriptLogo from './typescript.svg';
+import viteLogo from '/vite.svg';
 
 import init from '@phala/dcap-qvl-web';
+import wasm from '@phala/dcap-qvl-web/dcap-qvl-web_bg.wasm';
 
-init().then(() => {
+init(wasm).then(() => {
   console.log('Phala DCAP QVL initialized!');
   // You can now use js_verify, js_get_collateral, etc.
 });
+
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
